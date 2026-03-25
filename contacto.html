@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto – Factoría Gráfica</title>
+  <meta name="description" content="Contáctanos para solicitar una cotización o más información sobre nuestros servicios de diseño gráfico e impresión." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logofg.png" alt="Logo" class="nav-logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portafolio.html">Portafolio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html" class="nav-cta">Contáctanos</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <h1>Contáctanos</h1>
+  <p>Estamos listos para escuchar tu proyecto y hacerlo realidad</p>
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a>
+    <span>/</span>
+    <em>Contacto</em>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="contact-info">
+        <h3>Hablemos de tu proyecto</h3>
+        <p>Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas. También puedes contactarnos directamente a través de cualquiera de estos canales.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="ci-icon"><i data-feather="map-pin"></i></div>
+            <div class="ci-text">
+              <strong>Dirección</strong>
+              <span>Av. Principal #123, Santo Domingo, RD</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i data-feather="phone"></i></div>
+            <div class="ci-text">
+              <strong>Teléfono</strong>
+              <span>+1 (809) 555-1234</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i data-feather="message-circle"></i></div>
+            <div class="ci-text">
+              <strong>WhatsApp</strong>
+              <span>+1 (809) 555-5678</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i data-feather="mail"></i></div>
+            <div class="ci-text">
+              <strong>Email</strong>
+              <span>info@graphicartstudio.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i data-feather="clock"></i></div>
+            <div class="ci-text">
+              <strong>Horario</strong>
+              <span>Lun–Vie: 8am–6pm | Sáb: 9am–2pm</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook">f</a>
+          <a href="#" class="social-link" title="Instagram">ig</a>
+          <a href="#" class="social-link" title="LinkedIn">in</a>
+          <a href="#" class="social-link" title="WhatsApp">wa</a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrapper">
+        <h3>Solicitar Cotización</h3>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="apellido">Apellido *</label>
+              <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+1 (000) 000-0000" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa / Negocio</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa (opcional)" />
+          </div>
+          <div class="form-group">
+            <label for="servicio">Servicio de interés *</label>
+            <select id="servicio" name="servicio" required>
+              <option value="">Selecciona un servicio</option>
+              <option value="branding">Diseño Gráfico & Branding</option>
+              <option value="impresion">Impresión Digital</option>
+              <option value="packaging">Packaging & Embalaje</option>
+              <option value="señalizacion">Señalización & Rotulación</option>
+              <option value="digital">Diseño Digital</option>
+              <option value="otro">Otro / No estoy seguro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="presupuesto">Presupuesto estimado</label>
+            <select id="presupuesto" name="presupuesto">
+              <option value="">Selecciona un rango</option>
+              <option value="pequeno">Menos de $500</option>
+              <option value="mediano">$500 – $2,000</option>
+              <option value="grande">$2,000 – $10,000</option>
+              <option value="corporativo">Más de $10,000</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Cuéntanos tu proyecto *</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Describe tu proyecto, necesidades, plazos y cualquier detalle relevante..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Enviar Solicitud</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding: 80px 20px; background: var(--light);">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+      <div class="accent-line"></div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:48px;">
+
+      <div style="background:white; border-radius:16px; padding:28px; border:1px solid rgba(0,0,0,0.06);">
+        <h4 style="font-size:1rem; margin-bottom:10px;">¿Cuánto tiempo tarda un proyecto?</h4>
+        <p style="color:var(--gray); font-size:0.9rem; line-height:1.7;">Depende del tipo de proyecto. Un logo tarda 3–5 días hábiles, una campaña completa puede tomar 2–4 semanas. Te damos el plazo exacto al recibir tu brief.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:28px; border:1px solid rgba(0,0,0,0.06);">
+        <h4 style="font-size:1rem; margin-bottom:10px;">¿Tienen servicio de entrega a domicilio?</h4>
+        <p style="color:var(--gray); font-size:0.9rem; line-height:1.7;">Sí, realizamos entregas en todo el territorio nacional. También ofrecemos envíos internacionales para pedidos especiales.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:28px; border:1px solid rgba(0,0,0,0.06);">
+        <h4 style="font-size:1rem; margin-bottom:10px;">¿Cuáles son los métodos de pago?</h4>
+        <p style="color:var(--gray); font-size:0.9rem; line-height:1.7;">Aceptamos transferencias bancarias, tarjetas de crédito/débito y efectivo. Para proyectos grandes requerimos un anticipo del 50%.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:28px; border:1px solid rgba(0,0,0,0.06);">
+        <h4 style="font-size:1rem; margin-bottom:10px;">¿Pueden hacer cambios al diseño?</h4>
+        <p style="color:var(--gray); font-size:0.9rem; line-height:1.7;">Incluimos hasta 3 rondas de revisiones en todos nuestros proyectos. Queremos que quedes 100% satisfecho con el resultado.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:28px; border:1px solid rgba(0,0,0,0.06);">
+        <h4 style="font-size:1rem; margin-bottom:10px;">¿Qué archivos entregamos?</h4>
+        <p style="color:var(--gray); font-size:0.9rem; line-height:1.7;">Entregamos los archivos en todos los formatos necesarios: PDF, AI, EPS para impresión y JPG, PNG, SVG para uso digital.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:28px; border:1px solid rgba(0,0,0,0.06);">
+        <h4 style="font-size:1rem; margin-bottom:10px;">¿Trabajan con clientes de fuera del país?</h4>
+        <p style="color:var(--gray); font-size:0.9sm; line-height:1.7;">Sí, trabajamos remotamente con clientes de todo el mundo. Nos comunicamos por video llamada, email y WhatsApp.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAPA ===== -->
+<section class="map-section">
+  <div class="map-header">
+    <div class="container">
+      <div class="map-header-inner">
+        <div class="map-address-block">
+          <p class="pm-label">Encuéntranos</p>
+          <h2>Visítanos en<br>nuestro taller</h2>
+          <div class="map-data">
+            <div class="map-data-item">
+              <i data-feather="map-pin"></i>
+              <div>
+                <strong>Dirección</strong>
+                <span>Av. Principal #123, Santo Domingo, RD</span>
+              </div>
+            </div>
+            <div class="map-data-item">
+              <i data-feather="clock"></i>
+              <div>
+                <strong>Horario</strong>
+                <span>Lun–Vie: 8am–6pm &nbsp;|&nbsp; Sáb: 9am–2pm</span>
+              </div>
+            </div>
+            <div class="map-data-item">
+              <i data-feather="phone"></i>
+              <div>
+                <strong>Teléfono</strong>
+                <span>+1 (809) 555-1234</span>
+              </div>
+            </div>
+            <div class="map-data-item">
+              <i data-feather="navigation"></i>
+              <div>
+                <strong>Cómo llegar</strong>
+                <span>A 2 minutos del Parque Central, frente al Banco Nacional</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://maps.google.com" target="_blank" class="btn btn-primary" style="margin-top:28px; display:inline-flex; align-items:center; gap:8px;">
+            <i data-feather="map" style="width:16px;height:16px;stroke:var(--primary)"></i>
+            Abrir en Google Maps
+          </a>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60744.55311540514!2d-69.99254!3d18.47361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89f1096b86d9%3A0xa8a9ff1fac755b16!2sSanto%20Domingo%2C%20Dominican%20Republic!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">Factoría Gráfica</span>
+        <p>Estudio de diseño gráfico y artes gráficas con más de 10 años creando soluciones visuales para empresas y emprendedores.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link">f</a>
+          <a href="#" class="social-link">in</a>
+          <a href="#" class="social-link">ig</a>
+          <a href="#" class="social-link">tw</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios.html">Diseño Gráfico</a></li>
+          <li><a href="servicios.html">Impresión Digital</a></li>
+          <li><a href="servicios.html">Packaging</a></li>
+          <li><a href="servicios.html">Señalización</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="portafolio.html">Portafolio</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Newsletter</h5>
+        <p>Recibe novedades y ofertas especiales.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="tu@email.com" />
+          <button>Suscribir</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Factoría Gráfica. Todos los derechos reservados. &nbsp;·&nbsp; Desarrollado por <strong style="color:var(--accent)">MAGC Graphic</strong></p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="js/main.js"></script>
+<script>feather.replace({ width: 18, height: 18 });</script>
+</body>
+</html>

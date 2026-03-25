@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio – Factoría Gráfica</title>
+  <meta name="description" content="Conoce nuestros proyectos de diseño gráfico, impresión, packaging y señalización." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .portfolio-page { padding: 80px 20px 100px; }
+    .portfolio-page .portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+    .portfolio-item { aspect-ratio: 4/3; }
+    .portfolio-item:nth-child(7) .portfolio-placeholder { background: linear-gradient(135deg, #f7971e, #ffd200); }
+    .portfolio-item:nth-child(8) .portfolio-placeholder { background: linear-gradient(135deg, #ee0979, #ff6a00); }
+    .portfolio-item:nth-child(9) .portfolio-placeholder { background: linear-gradient(135deg, #4776e6, #8e54e9); }
+    .portfolio-item:nth-child(10) .portfolio-placeholder { background: linear-gradient(135deg, #11998e, #38ef7d); }
+    .portfolio-item:nth-child(11) .portfolio-placeholder { background: linear-gradient(135deg, #fc4a1a, #f7b733); }
+    .portfolio-item:nth-child(12) .portfolio-placeholder { background: linear-gradient(135deg, #373b44, #4286f4); }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 640px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      animation: modalIn 0.3s ease;
+    }
+    @keyframes modalIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .modal-visual {
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    .modal-body { padding: 28px 32px; }
+    .modal-tag { display: inline-block; background: rgba(245,200,0,0.2); color: #1a1a1a; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; }
+    .modal-body h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
+    .modal-body p { color: #6c757d; line-height: 1.7; margin-bottom: 20px; }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px;
+      background: rgba(0,0,0,0.3);
+      border: none; border-radius: 50%;
+      color: #fff; font-size: 1.1rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: 0.2s;
+    }
+    .modal-close:hover { background: #F5C800; color: #1a1a1a; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logofg.png" alt="Logo" class="nav-logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="portafolio.html">Portafolio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html" class="nav-cta">Contáctanos</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <h1>Nuestro Portafolio</h1>
+  <p>Más de 500 proyectos realizados para clientes de distintas industrias y tamaños</p>
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a>
+    <span>/</span>
+    <em>Portafolio</em>
+  </div>
+</section>
+
+<section class="portfolio-page">
+  <div class="container">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+      <button class="filter-btn" data-filter="impresion">Impresión</button>
+      <button class="filter-btn" data-filter="packaging">Packaging</button>
+      <button class="filter-btn" data-filter="señalizacion">Señalización</button>
+      <button class="filter-btn" data-filter="digital">Digital</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <div class="portfolio-item" data-category="branding"
+           data-title="Identidad Corporativa TechSolutions"
+           data-cat="Branding"
+           data-desc="Rediseño completo de la identidad corporativa de TechSolutions RD, incluyendo logotipo, paleta de colores, tipografía y manual de marca."
+           data-feather="target">
+        <div class="portfolio-placeholder">
+          <i data-feather="target"></i>
+          <span class="ph-label">Branding</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Identidad Corporativa</h4>
+          <p>TechSolutions RD</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="impresion"
+           data-title="Catálogo de Temporada FashionBrand"
+           data-cat="Impresión"
+           data-desc="Diseño y producción de catálogo de 48 páginas en papel couché 150gr, con acabado barniz UV localizado en portada."
+           data-feather="file-text">
+        <div class="portfolio-placeholder">
+          <i data-feather="file-text"></i>
+          <span class="ph-label">Impresión</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Catálogo de Temporada</h4>
+          <p>FashionBrand</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="packaging"
+           data-title="Línea de Packaging NaturalLife"
+           data-cat="Packaging"
+           data-desc="Diseño y producción de empaques para línea completa de 12 productos orgánicos. Cajas kraft con impresión eco-friendly."
+           data-feather="package">
+        <div class="portfolio-placeholder">
+          <i data-feather="package"></i>
+          <span class="ph-label">Packaging</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Línea de Packaging</h4>
+          <p>NaturalLife</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="señalizacion"
+           data-title="Sistema de Señalización Plaza Central"
+           data-cat="Señalización"
+           data-desc="Diseño e instalación de 85 piezas de señalización interior y exterior para centro comercial de 3 niveles."
+           data-feather="layout">
+        <div class="portfolio-placeholder">
+          <i data-feather="layout"></i>
+          <span class="ph-label">Señalización</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Sistema de Señalización</h4>
+          <p>Plaza Central</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="branding"
+           data-title="Rebranding RestaurantGourmet"
+           data-cat="Branding"
+           data-desc="Rebranding completo del restaurante incluyendo nuevo logo, menús, packaging, uniformes del personal y comunicaciones digitales."
+           data-feather="star">
+        <div class="portfolio-placeholder">
+          <i data-feather="star"></i>
+          <span class="ph-label">Branding</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Rebranding Completo</h4>
+          <p>RestaurantGourmet</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="digital"
+           data-title="Campaña Digital LanzamientoX"
+           data-cat="Digital"
+           data-desc="Creación de 120 piezas gráficas para campaña de lanzamiento en redes sociales, email marketing y banners publicitarios."
+           data-feather="monitor">
+        <div class="portfolio-placeholder">
+          <i data-feather="monitor"></i>
+          <span class="ph-label">Digital</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Campaña Digital</h4>
+          <p>LanzamientoX</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="impresion"
+           data-title="Tarjetas Premium Banco Estrella"
+           data-cat="Impresión"
+           data-desc="Impresión de tarjetas de presentación premium con laminado mate, foil dorado y relieve UV para la gerencia del banco."
+           data-feather="credit-card">
+        <div class="portfolio-placeholder">
+          <i data-feather="credit-card"></i>
+          <span class="ph-label">Impresión</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Tarjetas Premium</h4>
+          <p>Banco Estrella</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="señalizacion"
+           data-title="Flota Vehicular DistribuidoraRD"
+           data-cat="Señalización"
+           data-desc="Rotulación completa de flota de 30 vehículos con vinilo de alta duración para empresa distribuidora nacional."
+           data-feather="truck">
+        <div class="portfolio-placeholder">
+          <i data-feather="truck"></i>
+          <span class="ph-label">Señalización</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Flota Vehicular</h4>
+          <p>DistribuidoraRD</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="packaging"
+           data-title="Packaging Premium CaféOrigen"
+           data-cat="Packaging"
+           data-desc="Diseño de empaques para 6 variedades de café de especialidad. Bolsas kraft con ventana y cierre hermético."
+           data-feather="coffee">
+        <div class="portfolio-placeholder">
+          <i data-feather="coffee"></i>
+          <span class="ph-label">Packaging</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Packaging Premium</h4>
+          <p>CaféOrigen</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="branding"
+           data-title="Branding ClinicaSalud+"
+           data-cat="Branding"
+           data-desc="Desarrollo de identidad visual para clínica médica: logo, papelería, señalización y comunicaciones internas."
+           data-feather="heart">
+        <div class="portfolio-placeholder">
+          <i data-feather="heart"></i>
+          <span class="ph-label">Branding</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Branding Clínica</h4>
+          <p>ClinicaSalud+</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="digital"
+           data-title="Templates RRSS EduTech Academy"
+           data-cat="Digital"
+           data-desc="Pack de 60 templates editables para redes sociales (Instagram y LinkedIn) con diferentes formatos: feed, stories y carruseles."
+           data-feather="smartphone">
+        <div class="portfolio-placeholder">
+          <i data-feather="smartphone"></i>
+          <span class="ph-label">Digital</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Templates RRSS</h4>
+          <p>EduTech Academy</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="impresion"
+           data-title="Revista Anual Corporación XYZ"
+           data-cat="Impresión"
+           data-desc="Diseño editorial y producción de revista corporativa anual, 80 páginas, tapa dura con laminado brillante."
+           data-feather="book-open">
+        <div class="portfolio-placeholder">
+          <i data-feather="book-open"></i>
+          <span class="ph-label">Impresión</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h4>Revista Corporativa</h4>
+          <p>Corporación XYZ</p>
+          <button class="view-btn">Ver Proyecto</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-visual" id="modalVisual"></div>
+    <div class="modal-body">
+      <span class="modal-tag" id="modalCat">Branding</span>
+      <h3 id="modalTitle">Título del Proyecto</h3>
+      <p id="modalDesc">Descripción del proyecto.</p>
+      <a href="contacto.html" class="btn btn-primary">Solicitar Proyecto Similar</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>¿Te gustó lo que viste?</h2>
+    <p>Cuéntanos tu proyecto y hagamos juntos algo increíble.</p>
+    <div class="cta-actions">
+      <a href="contacto.html" class="btn btn-white">Iniciar un Proyecto</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">Factoría Gráfica</span>
+        <p>Estudio de diseño gráfico y artes gráficas con más de 10 años creando soluciones visuales.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link">f</a>
+          <a href="#" class="social-link">in</a>
+          <a href="#" class="social-link">ig</a>
+          <a href="#" class="social-link">tw</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios.html">Diseño Gráfico</a></li>
+          <li><a href="servicios.html">Impresión Digital</a></li>
+          <li><a href="servicios.html">Packaging</a></li>
+          <li><a href="servicios.html">Señalización</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="portafolio.html">Portafolio</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Newsletter</h5>
+        <p>Recibe novedades y ofertas especiales.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="tu@email.com" />
+          <button>Suscribir</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Factoría Gráfica. Todos los derechos reservados. &nbsp;·&nbsp; Desarrollado por <strong style="color:var(--accent)">MAGC Graphic</strong></p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="js/main.js"></script>
+<script>
+  // Portfolio filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.portfolio-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      items.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Modal
+  const overlay = document.getElementById('modalOverlay');
+  const modalVisual = document.getElementById('modalVisual');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalCat = document.getElementById('modalCat');
+
+  document.querySelectorAll('.view-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.portfolio-item');
+      const iconName = item.dataset.feather;
+      modalVisual.style.background = '#111111';
+      modalVisual.innerHTML = `<i data-feather="${iconName}"></i>`;
+      feather.replace({ width: 56, height: 56 });
+      const svg = modalVisual.querySelector('svg');
+      if (svg) { svg.style.stroke = '#F5C800'; svg.style.strokeWidth = '1.2'; }
+      modalTitle.textContent = item.dataset.title;
+      modalDesc.textContent = item.dataset.desc;
+      modalCat.textContent = item.dataset.cat;
+      overlay.classList.add('open');
+    });
+  });
+
+  document.getElementById('modalClose').addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+
+  feather.replace({ width: 40, height: 40 });
+</script>
+</body>
+</html>
